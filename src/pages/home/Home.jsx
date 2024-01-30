@@ -1,4 +1,4 @@
-import MainSection from "../../components/MainSection";
+import MainSection from "../../components/MainSection/MainSection";
 import Profile from "../../components/Profile/Profile";
 import RightSideBar from "../../components/RightSideBar";
 

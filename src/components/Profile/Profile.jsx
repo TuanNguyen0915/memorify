@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const Profile = () => {
   return (
-    <section className="flex w-[36rem] flex-col gap-4 overflow-auto">
+    <section className="flex w-[30rem] flex-col gap-4 overflow-auto">
       <SearchBar />
       <ProfileCard />
       <FollowCard />

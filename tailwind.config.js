@@ -15,6 +15,10 @@ export default {
         hrColor: "#cfcdcd",
         "cardBG":"rgba(255,255,255,0.64)",
         "inputColor": "rgba(40,52,62,0.07)",
+        photo : '#4cb256',
+        video: "#4a4eb7",
+        location: "#ef5757",
+        schedule: "#e1ae4a"
       },
     },
   },
