@@ -5,6 +5,12 @@
 @tailwind utilities;
 
 @layer components {
+  .flexCenter {
+    @apply flex items-center justify-center
+  }
+  .flexBetween {
+    @apply flex items-center justify-between
+  }
   .btn {
     @apply bg-gradient-to-tr from-[#f9a255] to-[#f95f35];
   }

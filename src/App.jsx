@@ -3,10 +3,10 @@ import Home from "./pages/home/Home";
 
 const App = () => {
   return (
-    <div className="text-black-1 overflow-hidden bg-[#f3f3f3] p-4">
+    <div className="text-black-1 overflow-hidden bg-[#f3f3f3] p-4 w-full">
       {/* 2 blur circle */}
-      <div className="blurCircle right-0 top-[-10%]"></div>
-      <div className="blurCircle left-[-8rem] top-[36%]"></div>
+      {/* <div className="blurCircle right-0 top-[-10%]"></div>
+      <div className="blurCircle left-[-8rem] top-[36%]"></div> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
