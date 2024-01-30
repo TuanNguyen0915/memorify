@@ -4,7 +4,7 @@ import RightSideBar from "../../components/RightSideBar";
 
 const Home = () => {
   return (
-    <div className="w-full flexBetween gap-4">
+    <div className="w-full flex justify-between gap-4">
       <Profile />
       <MainSection />
       <RightSideBar />
