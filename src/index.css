@@ -1,13 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .btn {
-    @apply bg-gradient-to-tr from-[#f9a255] to-[#f95f35]
+    @apply bg-gradient-to-tr from-[#f9a255] to-[#f95f35];
+  }
+  .blurCircle {
+    @apply absolute w-[22rem] h-[14rem] rounded-full bg-lightBlue blur-3xl
   }
 }
 
+body {
+  font-family: "Inter", sans-serif;
+}
 
 /* 
 photo: #4cb256,
