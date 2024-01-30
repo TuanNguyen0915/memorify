@@ -1,4 +1,4 @@
-import { followers } from "../../data/follower.data";
+import { followers } from "../../data/follower.data"
 
 const FollowCard = () => {
   return (
@@ -15,16 +15,18 @@ const FollowCard = () => {
             <p>{user.name}</p>
             <p>@{user.userName}</p>
           </div>
-          <div className="flex items-center justify-end mr-4">
-            <button className="btn rounded-md px-3 py-1 text-white hover:scale-125 duration-500">
+          <div className="mr-4 flex items-center justify-end">
+            <button className="btn rounded-md px-3 py-1 text-white duration-500 hover:scale-125">
               Follow
             </button>
           </div>
         </div>
       ))}
-      <p className="w-full text-center text-orange-1 font-semibold text-sm">show more</p>
+      <p className="w-full text-center text-sm font-semibold text-orange-1">
+        show more
+      </p>
     </div>
-  );
-};
+  )
+}
 
-export default FollowCard;
+export default FollowCard
