@@ -25,7 +25,9 @@ const NavBar = ({ setImage, imageRef, setVideo, videoRef }) => {
             <FaCalendarAlt className="scale-150" />
             <p>Schedule</p>
           </div>
-          <button className="btn rounded-lg px-4 py-2 text-white">Share</button>
+          <button className="rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1">
+            Share
+          </button>
         </div>
       </div>
     </nav>
