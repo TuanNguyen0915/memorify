@@ -11,7 +11,13 @@ const FeedCard = ({ post }) => {
         className="h-[400px] w-full rounded-lg object-cover"
       />
       <div className="flex items-center gap-5">
-        {post.liked ? <FaHeart className="text-3xl text-orange-1"/> : <FaRegHeart className="text-3xl"/>}
+        <div className="flexCenter">
+          {post.liked ? (
+            <FaHeart className="text-3xl text-orange-1" />
+          ) : (
+            <FaRegHeart className="text-3xl" />
+          )}
+        </div>
         <TbMessage2 className="text-3xl" />
         <FiShare className="text-3xl" />
       </div>

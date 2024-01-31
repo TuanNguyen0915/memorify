@@ -1,4 +1,4 @@
-import { PostData } from "../../data/posts.data"
+import { PostData } from '../../data'
 import FeedCard from "./FeedCard"
 
 const Feed = () => {

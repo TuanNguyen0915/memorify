@@ -1,4 +1,4 @@
-import { followers } from "../../data/follower.data"
+import { followers } from "../../data"
 
 const FollowCard = () => {
   return (
@@ -17,7 +17,7 @@ const FollowCard = () => {
             <p>{user.name}</p>
             <p>@{user.userName}</p>
           </div>
-          <div className="mr-4 flex items-center justify-end ml-auto">
+          <div className="ml-auto mr-4 flex items-center justify-end">
             <button className="btn w-full rounded-md px-3 py-1 text-white duration-500 hover:scale-125">
               Follow
             </button>
