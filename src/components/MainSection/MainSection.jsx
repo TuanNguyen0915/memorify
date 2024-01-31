@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import NavBar from "../NavBar/NavBar"
 import PreviewSection from "./PreviewSection"
+import Feed from "./Feed"
 
 const MainSection = () => {
   const [image, setImage] = useState(null)
@@ -25,6 +26,7 @@ const MainSection = () => {
         imageRef={imageRef}
         videoRef={videoRef}
       />
+      <Feed /> 
     </section>
   )
 }

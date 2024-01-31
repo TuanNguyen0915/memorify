@@ -1,7 +1,13 @@
+import { PostData } from "../../data/posts.data"
+import FeedCard from "./FeedCard"
 
 const Feed = () => {
   return (
-    <div>Feed</div>
+    <div className="w-full mt-5">
+      {PostData.map((post) => (
+        <FeedCard key={post.id} post={post} />
+      ))}
+    </div>
   )
 }
 
