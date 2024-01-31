@@ -11,7 +11,7 @@ const AddImage = ({ setImage, imageRef }) => {
   return (
     <label className="flex cursor-pointer items-center gap-1 text-photo">
       <MdPhoto className="scale-150" />
-      <p>Photo</p>
+      <p className="hidden lg:flex">Photo</p>
       <input
         type="file"
         accept="image/*"

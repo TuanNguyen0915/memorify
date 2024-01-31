@@ -24,11 +24,11 @@ const NavBar = ({ setImage, imageRef, setVideo, videoRef }) => {
           <AddVideo setVideo={setVideo} videoRef={videoRef} />
           <div className="flex cursor-pointer items-center gap-1 text-location">
             <MdOutlineLocationOn className="scale-150" />
-            <p>Location</p>
+            <p className="hidden lg:flex">Location</p>
           </div>
           <div className="flex cursor-pointer items-center gap-1 text-schedule">
             <FaCalendarAlt className="scale-150" />
-            <p>Schedule</p>
+            <p className="hidden lg:flex">Schedule</p>
           </div>
           <button className="rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1">
             Share

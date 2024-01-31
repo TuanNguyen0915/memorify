@@ -1,4 +1,3 @@
-import React from "react"
 import { RiVideoFill } from "react-icons/ri"
 
 const AddVideo = ({ videoRef, setVideo }) => {
@@ -11,7 +10,7 @@ const AddVideo = ({ videoRef, setVideo }) => {
   return (
     <label className="flex cursor-pointer items-center gap-1 text-video">
       <RiVideoFill className="scale-150" />
-      <p>Video</p>
+      <p className="hidden lg:flex">Video</p>
       <input type="file" accept="video/*" name="image" hidden ref={videoRef} onChange={handleChange} />
     </label>
   )
