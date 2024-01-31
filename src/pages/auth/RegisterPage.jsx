@@ -59,7 +59,7 @@ const RegisterPage = () => {
           </div>
 
           <p>
-            Have a account?{" "}
+            Already have an account?{" "}
             <span
               className="cursor-pointer text-orange-1"
               onClick={() => navigate("/login")}

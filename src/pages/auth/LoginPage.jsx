@@ -27,7 +27,7 @@ const LoginPage = () => {
           />
           <div className="flexBetween flex gap-4">
             <p>
-              Not have a account?{" "}
+              Don&#39;t have an account?{" "}
               <span
                 className="cursor-pointer text-orange-1"
                 onClick={() => navigate("/register")}
