@@ -1,7 +1,9 @@
 import avatar from "/avatar.jpeg";
 import { FaSignOutAlt } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 const ProfileCard = () => {
+  const navigate = useNavigate()
+
   return (
     <div className=" flex w-full flex-col gap-4 rounded-3xl bg-white">
       <div className="relative h-[150px] w-full">
@@ -43,7 +45,7 @@ const ProfileCard = () => {
         </div>
       </div>
       <div className="flexCenter z-10 my-4 w-full">
-        <p className="text-orange-1 text-xl font-bold">My Profile</p>
+        <p className="text-orange-1 text-xl font-bold cursor-pointer" onClick={()=> navigate('/profile')}>My Profile</p>
       </div>
     </div>
   );

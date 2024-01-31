@@ -1,5 +1,5 @@
 import MainSection from "../../components/MainSection/MainSection"
-import Profile from "../../components/Profile/Profile"
+import Profile from "../../components/LeftSideBar/Profile"
 import RightSideBar from "../../components/RightSideBar/RightSideBar"
 
 const Home = () => {
