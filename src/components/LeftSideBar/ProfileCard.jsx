@@ -34,7 +34,7 @@ const ProfileCard = () => {
         <p className="text-xl font-bold">Tuan Nguyen</p>
         <p>Junior FullStack</p>
       </div>
-      <div className="flexCenter border-hrColor z-10 mx-4 border-b-2 border-t-2">
+      <div className="flexCenter border-hrColor z-10 mx-4 border-b-2 border-t-2 p-4">
         <div className="border-hrColor flex w-full flex-col items-center justify-center border-e-2">
           <p className="font-semibold">1235</p>
           <p className="text-gray-500">Followers</p>

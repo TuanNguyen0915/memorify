@@ -26,14 +26,19 @@ const MainProfile = () => {
         <p className="text-xl font-bold">Tuan Nguyen</p>
         <p>Junior FullStack</p>
       </div>
-      <div className="flexCenter z-10 mx-4 mb-5 border-b-2 border-t-2 border-hrColor">
-        <div className="flex w-full flex-col items-center justify-center border-e-2 border-hrColor">
+
+      <div className="flexCenter z-10 mx-8 mb-5 border-b-2 border-t-2 border-hrColor p-4">
+        <div className="flex w-full flex-col items-center justify-center border-e-2 border-hrColor ">
           <p className="font-semibold">1235</p>
           <p className="text-gray-500">Followers</p>
         </div>
-        <div className="flex w-full flex-col items-center justify-center">
+        <div className="flex w-full flex-col items-center justify-center border-e-2 border-hrColor">
           <p className="font-semibold">1</p>
           <p className="text-gray-500">Following</p>
+        </div>
+        <div className="flex w-full flex-col items-center justify-center">
+        <p className="font-semibold">5</p>
+          <p className="text-gray-500">Posts</p>
         </div>
       </div>
       <div className="flexCenter mb-5 w-full ">

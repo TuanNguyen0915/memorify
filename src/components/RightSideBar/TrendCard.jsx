@@ -5,7 +5,7 @@ const TrendCard = () => {
     <motion.div
       initial={{ x: 200, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.5 }}
       className="flex flex-col rounded-3xl bg-white p-4"
     >
       <p className="text-3xl font-semibold">Hot trend for you</p>
