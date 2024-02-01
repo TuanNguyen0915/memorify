@@ -3,7 +3,7 @@ import Button from "../Button"
 
 const FollowCard = () => {
   return (
-    <div className="z-10 flex w-full flex-col gap-4">
+    <div className="flex w-full flex-col gap-4">
       <p className="text-lg font-semibold">Who is following you</p>
       {followers.map((user, idx) => (
         <div className="flex w-full items-center gap-2" key={idx}>

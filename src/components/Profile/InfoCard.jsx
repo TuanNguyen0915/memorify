@@ -4,11 +4,15 @@ import Button from "../Button"
 
 const InfoCard = () => {
   const [isEdit, setIsEdit] = useState(false)
+
   return (
     <div className="flex w-full flex-col gap-4 rounded-3xl bg-white p-5">
       <div className="flexBetween mb-5">
         <p className="text-xl font-bold">username info</p>
-        <GoPencil className="text-xl cursor-pointer" onClick={() => setIsEdit(!isEdit)}/>
+        <GoPencil
+          className="cursor-pointer text-xl"
+          onClick={() => setIsEdit(!isEdit)}
+        />
       </div>
       <form className=" flex flex-col gap-4 px-2">
         <p>
@@ -44,9 +48,7 @@ const InfoCard = () => {
             "Work from home"
           )}
         </p>
-        {isEdit && (
-          <Button text={"Edit Profile"} />
-        )}
+        {isEdit && <Button text={"Edit Profile"} />}
       </form>
       <div className=" mt-10 flex w-full items-center justify-end">
         <Button text={"Log Out"} />

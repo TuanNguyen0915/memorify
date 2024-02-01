@@ -5,10 +5,10 @@ const ProfileCard = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="z-10 flex w-full flex-col gap-4 rounded-3xl bg-white">
+    <div className="flex w-full flex-col gap-4 rounded-3xl bg-white">
       <div className="relative h-[150px] w-full">
         <div
-          className="absolute right-5 top-5 z-10 rounded-lg bg-red-500 p-2 text-white opacity-80 duration-500 hover:scale-125 hover:opacity-100"
+          className="absolute right-5 top-5  rounded-lg bg-red-500 p-2 text-white opacity-80 duration-500 hover:scale-125 hover:opacity-100"
           onClick={() => console.log("Sign Out")}
         >
           <FaSignOutAlt />
