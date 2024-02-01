@@ -11,9 +11,6 @@
   .flexBetween {
     @apply flex items-center justify-between;
   }
-  .btn {
-    @apply bg-gradient-to-tr from-[#e5bd9b] to-[#f95f35];
-  }
   .blurCircle {
     @apply absolute h-[14rem] w-[22rem] rounded-full bg-lightBlue blur-3xl;
   }

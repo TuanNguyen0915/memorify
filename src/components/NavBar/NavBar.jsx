@@ -4,13 +4,14 @@ import { FaCalendarAlt } from "react-icons/fa"
 import AddImage from "./AddImage"
 import AddVideo from "./AddVideo"
 import { motion } from "framer-motion"
+import Button from "../Button"
 const NavBar = ({ setImage, imageRef, setVideo, videoRef }) => {
   return (
     <motion.nav
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      className="z-10 flex w-full gap-4 rounded-lg bg-white p-4"
+      className=" flex w-full gap-4 rounded-lg bg-white p-4"
     >
       <img src={avatar} alt="avatar" className="h-14 w-14 rounded-full" />
       <div className="flex w-full flex-col gap-2">
@@ -30,9 +31,9 @@ const NavBar = ({ setImage, imageRef, setVideo, videoRef }) => {
             <FaCalendarAlt className="scale-150" />
             <p className="hidden lg:flex">Schedule</p>
           </div>
-          <button className="rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1">
-            Share
-          </button>
+          <div className="flexCenter">
+            <Button text="Share" />
+          </div>
         </div>
       </div>
     </motion.nav>

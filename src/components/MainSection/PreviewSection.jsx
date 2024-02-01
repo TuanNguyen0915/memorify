@@ -22,7 +22,7 @@ const PreviewSection = ({
       >
         {(image || video) && (
           <div
-            className="absolute -right-10 top-5 z-10 duration-500 hover:scale-150"
+            className="absolute -right-10 top-5  duration-500 hover:scale-150"
             onClick={handleOnClickClose}
           >
             <IoClose className="scale-150 text-slate-600" />

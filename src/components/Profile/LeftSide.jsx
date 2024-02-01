@@ -7,7 +7,7 @@ const LeftSide = () => {
     <div className="flex h-full w-full flex-col gap-4 overflow-y-auto">
       <SearchBar />
       <InfoCard />
-      <div className="z-10">
+      <div className="">
       <FollowCard />
       </div>
     </div>

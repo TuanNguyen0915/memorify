@@ -5,13 +5,13 @@ import RightSideBar from "../../components/RightSideBar/RightSideBar"
 const Home = () => {
   return (
     <div className="flex w-full justify-between gap-4 overflow-hidden">
-      <div className="h-screen w-[30rem]">
+      <div className="hidden h-screen w-[30rem] xl:block">
         <Profile />
       </div>
-      <div className="w-full">
+      <div className="z-10 w-full">
         <MainSection />
       </div>
-      <div className="z-10 h-screen w-[30rem]">
+      <div className=" hidden h-screen w-[30rem] xl:block">
         <RightSideBar />
       </div>
     </div>

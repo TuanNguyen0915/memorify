@@ -10,7 +10,7 @@ const ProfilePage = () => {
       <div className="w-full">
         <MainProfile />
       </div>
-      <div className="z-10 h-screen w-[30rem]">
+      <div className="h-screen w-[30rem]">
         <RightSideBar />
       </div>
     </div>

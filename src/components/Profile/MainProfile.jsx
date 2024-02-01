@@ -1,3 +1,4 @@
+import Button from "../Button"
 import avatar from "/avatar.jpeg"
 import { useNavigate } from "react-router-dom"
 const MainProfile = () => {
@@ -5,7 +6,7 @@ const MainProfile = () => {
   return (
     <div className=" flex w-full flex-col gap-4 rounded-3xl bg-white">
       <div className="relative h-[300px] w-full">
-        <div className="z-4 absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-3xl bg-black/40"></div>
+        <div className=" absolute bottom-0 left-0 right-0 top-0 h-full w-full rounded-t-3xl bg-black/40"></div>
         <img
           src="https://source.unsplash.com/random/1000x500"
           alt="banner"
@@ -22,12 +23,12 @@ const MainProfile = () => {
         />
       </div>
       {/* INFO */}
-      <div className="z-10  flex w-full flex-col items-center p-4">
+      <div className=" flex w-full flex-col items-center p-4">
         <p className="text-xl font-bold">Tuan Nguyen</p>
         <p>Junior FullStack</p>
       </div>
 
-      <div className="flexCenter z-10 mx-8 mb-5 border-b-2 border-t-2 border-hrColor p-4">
+      <div className="flexCenter  mx-8 mb-5 border-b-2 border-t-2 border-hrColor p-4">
         <div className="flex w-full flex-col items-center justify-center border-e-2 border-hrColor ">
           <p className="font-semibold">1235</p>
           <p className="text-gray-500">Followers</p>
@@ -37,17 +38,14 @@ const MainProfile = () => {
           <p className="text-gray-500">Following</p>
         </div>
         <div className="flex w-full flex-col items-center justify-center">
-        <p className="font-semibold">5</p>
+          <p className="font-semibold">5</p>
           <p className="text-gray-500">Posts</p>
         </div>
       </div>
       <div className="flexCenter mb-5 w-full ">
-        <button
-          onClick={() => navigate("/")}
-          className="btn flexCenter w-1/4 rounded-lg border border-orange-1 px-4 py-2 text-white duration-500 hover:bg-none hover:text-orange-1"
-        >
-          Back to HomePage
-        </button>
+        <div className="fleCenter w-1/4" onClick={() => navigate("/")}>
+          <Button text={"Back to HomePage"} />
+        </div>
       </div>
     </div>
   )

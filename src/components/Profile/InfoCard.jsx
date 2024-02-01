@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { GoPencil } from "react-icons/go"
+import Button from "../Button"
 
 const InfoCard = () => {
   const [isEdit, setIsEdit] = useState(false)
@@ -7,9 +8,9 @@ const InfoCard = () => {
     <div className="flex w-full flex-col gap-4 rounded-3xl bg-white p-5">
       <div className="flexBetween mb-5">
         <p className="text-xl font-bold">username info</p>
-        <GoPencil className="text-xl" onClick={() => setIsEdit(!isEdit)} />
+        <GoPencil className="text-xl cursor-pointer" onClick={() => setIsEdit(!isEdit)}/>
       </div>
-      <form className="z-10 flex flex-col gap-4 px-2">
+      <form className=" flex flex-col gap-4 px-2">
         <p>
           <span className="font-semibold">Status: </span>{" "}
           {isEdit ? (
@@ -44,15 +45,11 @@ const InfoCard = () => {
           )}
         </p>
         {isEdit && (
-          <button className="btn rounded-md border border-orange-1 px-4 py-2 text-white duration-500 hover:bg-none hover:text-orange-1">
-            Edit Profile
-          </button>
+          <Button text={"Edit Profile"} />
         )}
       </form>
-      <div className="mt-10 flex w-full items-center justify-end">
-        <button className="btn rounded-md border border-orange-1 px-4 py-2 text-white duration-500 hover:bg-none hover:text-orange-1">
-          Log Out
-        </button>
+      <div className=" mt-10 flex w-full items-center justify-end">
+        <Button text={"Log Out"} />
       </div>
     </div>
   )

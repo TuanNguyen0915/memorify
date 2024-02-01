@@ -7,7 +7,7 @@ const NotiBar = ({ clickTrend, setClickTrend }) => {
     if (setClickTrend) setClickTrend(!clickTrend)
   }
   return (
-    <div className="flexBetween w-full">
+    <div className="z-10 flexBetween w-full">
       <div onClick={handleClickTrend}>
         <TbSquareRoundedChevronsDown
           className={`text-3xl ${clickTrend ? "text-orange-1" : "-rotate-180"} duration-500`}

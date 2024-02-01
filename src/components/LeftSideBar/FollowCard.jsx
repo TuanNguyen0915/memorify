@@ -1,8 +1,9 @@
 import { followers } from "../../data"
+import Button from "../Button"
 
 const FollowCard = () => {
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="z-10 flex w-full flex-col gap-4">
       <p className="text-lg font-semibold">Who is following you</p>
       {followers.map((user, idx) => (
         <div className="flex w-full items-center gap-2" key={idx}>
@@ -18,9 +19,7 @@ const FollowCard = () => {
             <p>@{user.userName}</p>
           </div>
           <div className="ml-auto mr-4 flex items-center justify-end">
-            <button className="btn w-full rounded-md px-3 py-1 text-white duration-500 hover:scale-125">
-              Follow
-            </button>
+            <Button text={"Follow"} />
           </div>
         </div>
       ))}
