@@ -8,9 +8,9 @@ import Button from "../Button"
 const NavBar = ({ setImage, imageRef, setVideo, videoRef }) => {
   return (
     <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2 }}
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
       className=" flex w-full gap-4 rounded-lg bg-white p-4"
     >
       <img src={avatar} alt="avatar" className="h-14 w-14 rounded-full" />

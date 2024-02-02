@@ -7,14 +7,16 @@ import RegisterPage from "./pages/auth/RegisterPage"
 
 const App = () => {
   return (
-    <div className="w-full bg-[#f3f3f3] p-4 text-black-1">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-      </Routes>
-    </div>
+   
+      <div className="w-full bg-[#f3f3f3] p-4 text-black-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
+      </div>
+    
   )
 }
 

@@ -10,7 +10,7 @@ const InfoCard = () => {
       <div className="flexBetween mb-5">
         <p className="text-xl font-bold">username info</p>
         <GoPencil
-          className="cursor-pointer text-xl"
+          className="cursor-pointer text-xl hover:text-orange-1 duration-500"
           onClick={() => setIsEdit(!isEdit)}
         />
       </div>
