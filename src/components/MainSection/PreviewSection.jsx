@@ -1,5 +1,5 @@
 import { IoClose } from "react-icons/io5"
-import { motion } from "framer-motion"
+
 const PreviewSection = ({
   image,
   video,
@@ -14,12 +14,7 @@ const PreviewSection = ({
   }
   return (
     <div className="flexCenter w-full">
-      <motion.div
-        initial={{ y: 200, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{duration: 0.75}}
-        className="relative flex w-1/2 items-center justify-center"
-      >
+      <div className="relative flex w-1/2 items-center justify-center">
         {(image || video) && (
           <div
             className="absolute -right-10 top-5  duration-500 hover:scale-150"
@@ -37,7 +32,7 @@ const PreviewSection = ({
             autoPlay="off"
           />
         )}
-      </motion.div>
+      </div>
     </div>
   )
 }
