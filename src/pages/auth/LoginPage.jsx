@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom"
-import Button from "../../components/Button"
 import { useState } from "react"
 import * as authServices from "../../services/auth"
 import { toast } from "react-toastify"
 import {
-  loginStart,
-  logInSuccess,
-  loginFailure,
+  authFailure,
+  authStart,
+  authSuccess,
 } from "../../redux/userSlice/userSlice"
-import { useDispatch} from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import Spinner from "../../components/spinner/Spinner"
 
 const LoginPage = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const { loading } = useSelector((state) => state.user)
   const [errMessage, setErrMessage] = useState(null)
   const [formData, setFormData] = useState({
     email: "",
@@ -25,18 +26,18 @@ const LoginPage = () => {
   const handleOnSubmit = async (e) => {
     e.preventDefault()
     try {
-      dispatch(loginStart())
+      dispatch(authStart())
       const data = await authServices.login(formData)
       if (!data.success) {
-        dispatch(loginFailure(data.message))
+        dispatch(authFailure(data.message))
         setErrMessage(data.message)
       } else {
-        dispatch(logInSuccess(data.user))
+        dispatch(authSuccess(data))
         toast.success(data.message)
         navigate("/")
       }
     } catch (error) {
-      dispatch(loginFailure(error))
+      dispatch(authFailure(error))
     }
   }
 
@@ -98,7 +99,12 @@ const LoginPage = () => {
           </div>
           <div className="flexCenter w-full">
             <div className="flexCenter w-1/2">
-              <Button text={"Log In"} />
+              <button
+                disabled={loading}
+                className="flexCenter h-[40px] w-full rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1 disabled:opacity-70 disabled:hover:bg-orange-1"
+              >
+                {loading ? <Spinner color="white" /> : "Login"}
+              </button>
             </div>
           </div>
         </form>

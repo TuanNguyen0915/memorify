@@ -1,10 +1,18 @@
 import { useNavigate } from "react-router-dom"
-import Button from "../../components/Button"
 import { useState } from "react"
 import * as authServices from "../../services/auth"
 import { toast } from "react-toastify"
+import {
+  authFailure,
+  authStart,
+  authSuccess,
+} from "../../redux/userSlice/userSlice"
+import { useDispatch, useSelector } from "react-redux"
+import Spinner from "../../components/spinner/Spinner"
 
 const RegisterPage = () => {
+  const dispatch = useDispatch()
+  const { loading } = useSelector((state) => state.user)
   const [errMessage, setErrMessage] = useState(null)
   const [formData, setFormData] = useState({
     email: "",
@@ -26,14 +34,21 @@ const RegisterPage = () => {
     if (formData.confirmPassword !== formData.password) {
       setErrMessage("Password is not matching")
     } else {
-      const user = await authServices.register(formData)
-      if (!user.success) {
-        setErrMessage(user.message)
-      } else {
-        toast.success(user.message)
-        navigate("/")
+      try {
+        dispatch(authStart())
+        const data = await authServices.register(formData)
+        if (!data.success) {
+          dispatch(authFailure(data.message))
+          setErrMessage(data.message)
+        } else {
+          dispatch(authSuccess(data))
+          toast.success(data.message)
+          navigate("/")
+        }
+      } catch (error) {
+        toast.error(error.message)
+        dispatch(authFailure(error))
       }
-      console.log(user)
     }
   }
 
@@ -135,7 +150,11 @@ const RegisterPage = () => {
 
           <div className="flexCenter  w-full">
             <div className="flexCenter w-1/2">
-              <Button text={"Register"} />
+              <button
+              disabled={loading}
+              className="flexCenter h-[40px] w-full rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1 disabled:hover:bg-orange-1 disabled:opacity-70">
+                {loading ? <Spinner color="white" /> : "Register"}
+              </button>
             </div>
           </div>
         </form>
