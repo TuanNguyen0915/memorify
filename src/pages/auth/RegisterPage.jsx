@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import Button from "../../components/Button"
 import { useState } from "react"
 import * as authServices from "../../services/auth"
+import { toast } from "react-toastify"
 
 const RegisterPage = () => {
   const [errMessage, setErrMessage] = useState(null)
@@ -28,7 +29,8 @@ const RegisterPage = () => {
       const user = await authServices.register(formData)
       if (!user.success) {
         setErrMessage(user.message)
-      } else { 
+      } else {
+        toast.success(user.message)
         navigate("/")
       }
       console.log(user)
