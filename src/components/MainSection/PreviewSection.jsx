@@ -1,6 +1,8 @@
 import { IoClose } from "react-icons/io5"
+import Spinner from "../spinner/Spinner"
 
 const PreviewSection = ({
+  loading,
   image,
   video,
   setImage,
@@ -13,8 +15,11 @@ const PreviewSection = ({
     setVideo(null)
   }
   return (
-    <div className="flexCenter w-full">
-      <div className="relative flex w-1/2 items-center justify-center">
+    <div className="flexCenter flex-col gap-10 w-full">
+      {loading ? <Spinner color={"orange"} /> : ""}
+      <div
+        className={`relative flex w-1/2 items-center justify-center ${loading ? "opacity-0" : "opacity-100"}`}
+      >
         {(image || video) && (
           <div
             className="absolute -right-10 top-5  duration-500 hover:scale-150"
