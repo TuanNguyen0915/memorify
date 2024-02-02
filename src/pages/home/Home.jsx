@@ -1,8 +1,11 @@
 import MainSection from "../../components/MainSection/MainSection"
 import Profile from "../../components/LeftSideBar/Profile"
 import RightSideBar from "../../components/RightSideBar/RightSideBar"
+// import { useSelector } from "react-redux"
 
 const Home = () => {
+  // const {currentUser} = useSelector(state=>state.user)
+  
   return (
     <main className="w-full h-full">
       <div className="flex w-full justify-between gap-4 overflow-hidden">
