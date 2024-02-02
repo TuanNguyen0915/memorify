@@ -3,8 +3,15 @@ import Button from "../../components/Button"
 import { useState } from "react"
 import * as authServices from "../../services/auth"
 import { toast } from "react-toastify"
+import {
+  loginStart,
+  logInSuccess,
+  loginFailure,
+} from "../../redux/userSlice/userSlice"
+import { useDispatch} from "react-redux"
 
 const LoginPage = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [errMessage, setErrMessage] = useState(null)
   const [formData, setFormData] = useState({
@@ -17,12 +24,19 @@ const LoginPage = () => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault()
-    const user = await authServices.login(formData)
-    if (!user.success) {
-      setErrMessage(user.message)
-    } else {
-      toast.success(user.message)
-      navigate("/")
+    try {
+      dispatch(loginStart())
+      const data = await authServices.login(formData)
+      if (!data.success) {
+        dispatch(loginFailure(data.message))
+        setErrMessage(data.message)
+      } else {
+        dispatch(logInSuccess(data.user))
+        toast.success(data.message)
+        navigate("/")
+      }
+    } catch (error) {
+      dispatch(loginFailure(error))
     }
   }
 
