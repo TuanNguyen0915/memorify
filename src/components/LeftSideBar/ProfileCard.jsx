@@ -1,15 +1,23 @@
 import avatar from "/avatar.jpeg"
 import { FaSignOutAlt } from "react-icons/fa"
 import { useNavigate } from "react-router-dom"
+import { useDispatch, useSelector} from "react-redux"
+import { userLogOut} from "../../redux/userSlice/userSlice"
 const ProfileCard = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const currentUser = useSelector(state => state.user)
+  console.log(currentUser)
+  const handleLogOut = () => {
+    dispatch(userLogOut())
+  }
 
   return (
     <div className="flex w-full flex-col gap-4 rounded-3xl bg-white">
       <div className="relative h-[150px] w-full">
         <div
-          className="absolute right-5 top-5  rounded-lg bg-red-500 p-2 text-white opacity-80 duration-500 hover:scale-125 hover:opacity-100"
-          onClick={() => console.log("Sign Out")}
+          className="z-10 absolute right-5 top-5  rounded-lg bg-red-500 p-2 text-white opacity-60 duration-500 hover:scale-125 hover:opacity-100"
+          onClick={handleLogOut}
         >
           <FaSignOutAlt />
         </div>
