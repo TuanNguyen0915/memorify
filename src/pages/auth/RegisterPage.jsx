@@ -54,9 +54,10 @@ const RegisterPage = () => {
 
   return (
     <div className="md:flexCenter flex h-screen w-full flex-col gap-20 md:flex-row">
-      <div className="absolute right-0 top-[-1rem] h-[300px]  w-[300px] rounded-3xl bg-blue-200 blur-[10rem]"></div>
-      <div className="absolute left-[-10rem] top-[10rem] h-[300px]  w-[300px] rounded-full bg-orange-400 blur-[10rem]"></div>
-      <div className=" flex flex-col items-center justify-center">
+      <div className="absolute  right-[-2rem] top-[-5rem] h-[300px] w-[300px] rounded-3xl bg-blue-400 blur-[10rem] "></div>
+      <div className="absolute left-[-10rem] top-[10rem]  h-[300px] w-[300px] rounded-full bg-orange-400 blur-[10rem] "></div>
+
+      <div className="z-10 flex flex-col items-center justify-center">
         <p
           className="mb-10 cursor-pointer text-7xl font-bold text-orange-1"
           onClick={() => navigate("/")}
@@ -65,7 +66,8 @@ const RegisterPage = () => {
         </p>
         <p className="text-xl font-semibold">Saving your moments</p>
       </div>
-      <div className="flex min-w-[50rem] flex-col gap-4 rounded-xl bg-white p-8">
+
+      <div className="z-10 flex w-full flex-col gap-4 rounded-xl bg-white p-8 md:w-1/3 md:min-w-[50rem]">
         <p className="w-full pb-4 text-center text-2xl font-bold">Register</p>
         {errMessage && (
           <p className="w-full pb-4 text-center text-xl text-orange-1">
@@ -151,8 +153,9 @@ const RegisterPage = () => {
           <div className="flexCenter  w-full">
             <div className="flexCenter w-1/2">
               <button
-              disabled={loading}
-              className="flexCenter h-[40px] w-full rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1 disabled:hover:bg-orange-1 disabled:opacity-70">
+                disabled={loading}
+                className="flexCenter h-[40px] w-full rounded-lg border border-orange-1 bg-orange-1 px-4 py-2 text-white duration-500 hover:bg-transparent hover:text-orange-1 disabled:opacity-70 disabled:hover:bg-orange-1"
+              >
                 {loading ? <Spinner color="white" /> : "Register"}
               </button>
             </div>

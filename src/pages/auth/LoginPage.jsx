@@ -43,12 +43,10 @@ const LoginPage = () => {
 
   return (
     <div className="md:flexCenter flex h-screen w-full flex-col gap-20 md:flex-row">
-      <div className="absolute right-[-10rem] top-[-10rem] h-[300px]  w-[300px] rounded-3xl bg-blue-200 blur-[10rem]"></div>
-      <div className="absolute left-[-10rem] top-[10rem] h-[300px]  w-[300px] rounded-full bg-orange-400 blur-[10rem]"></div>
+      <div className="absolute  top-[-5rem] h-[300px] right-[-2rem] w-[300px] rounded-3xl bg-blue-400 blur-[10rem] "></div>
+      <div className="absolute left-[-10rem] top-[10rem]  h-[300px] w-[300px] rounded-full bg-orange-400 blur-[10rem] "></div>
 
-      <div className="absolute right-5 top-0 h-[300px]  w-[300px] rounded-full bg-blue-400 blur-[5rem]"></div>
-
-      <div className=" flex flex-col items-center justify-center">
+      <div className="z-10 flex flex-col items-center justify-center">
         <p
           className="mb-10 cursor-pointer text-7xl font-bold text-orange-1"
           onClick={() => navigate("/")}
@@ -57,7 +55,8 @@ const LoginPage = () => {
         </p>
         <p className="text-xl font-semibold">Saving your moments</p>
       </div>
-      <div className="flex min-w-[30rem] flex-col gap-4 rounded-xl bg-white p-8">
+      
+      <div className="z-10 flex w-full flex-col gap-4 rounded-xl bg-white p-8 md:w-1/3 md:min-w-[30rem]">
         <p className="w-full pb-4 text-center text-2xl font-bold">Log In</p>
         {errMessage && (
           <p className="w-full pb-4 text-center text-lg text-orange-1">
