@@ -1,35 +1,39 @@
-import { useEffect, useState } from "react"
-// import { PostData } from "../../data"
+import { useEffect } from "react"
+import Spinner from "../spinner/Spinner"
 import FeedCard from "./FeedCard"
 import * as postService from "../../services/post"
+import {
+  allPostsStart,
+  allPostsSuccess,
+  allPostsFailure,
+} from "../../redux/postsSlice/postsSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 const Feed = () => {
-  const [loading, setLoading] = useState(false)
-  const [posts, setPosts] = useState([])
+  const dispatch = useDispatch()
+  const { loading, posts } = useSelector((state) => state.posts)
+
   useEffect(() => {
     try {
-      setLoading(true)
+      dispatch(allPostsStart())
       const fetchingData = async () => {
         const data = await postService.allPosts()
-        setPosts(data.posts)
-        setLoading(false)
+        dispatch(allPostsSuccess(data.posts))
       }
       fetchingData()
     } catch (error) {
-      setLoading(false)
-      throw new Error(error)
+      dispatch(allPostsFailure(error))
     }
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="mt-5 w-full">
-      {/* {PostData.map((post) => (
-        <FeedCard key={post.id} post={post} />
-      ))} */}
       {loading && (
-        <div className="mx-auto h-screen text-center text-3xl">LOADING ...</div>
+        <div className="mx-auto h-screen text-center text-3xl">
+          <Spinner />
+        </div>
       )}
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <FeedCard key={post._id} post={post} />
       ))}
     </div>

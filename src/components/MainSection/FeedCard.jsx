@@ -3,10 +3,9 @@ import { FaHeart } from "react-icons/fa6"
 import { TbMessage2 } from "react-icons/tb"
 import { FiShare } from "react-icons/fi"
 const FeedCard = ({ post }) => {
-  console.log(post)
 
   return (
-    <div className="mb-5 flex w-full flex-col gap-4 rounded-2xl rounded-lg bg-white p-4">
+    <div className="mb-5 flex w-full flex-col gap-4  rounded-lg bg-white p-4">
       <img
         src={post.imageUrl}
         alt="post"
