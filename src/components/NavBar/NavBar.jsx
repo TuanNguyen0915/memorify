@@ -85,13 +85,14 @@ const NavBar = () => {
         </motion.nav>
       )}
       {(typePost || image || video) && (
-        <div className="z-10 flex h-[500px] w-full flex-col gap-5 rounded-b-lg bg-white p-4">
+        <div className="flex w-full flex-col gap-5 rounded-b-lg bg-white p-4">
           {/* <p className="text-3xl">{typePost}</p> */}
           <input
+            placeholder="What's happening?"
             onChange={(e) => SetTypePost(e.target.value)}
             value={typePost}
             type="text"
-            className="w-full bg-none text-3xl outline-none"
+            className="w-full bg-none text-xl outline-none md:text-3xl"
           />
           <PreviewSection
             image={image}

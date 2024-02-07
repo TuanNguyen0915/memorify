@@ -15,10 +15,10 @@ const PreviewSection = ({
     setVideo(null)
   }
   return (
-    <div className="flexCenter flex-col gap-10 w-full">
+    <div className="flex justify-center gap-10 w-full max-md:h-1/2">
       {loading ? <Spinner color={"orange"} /> : ""}
       <div
-        className={`relative flex w-1/2 items-center justify-center ${loading ? "opacity-0" : "opacity-100"}`}
+        className={`relative flex md:w-1/2 items-center justify-center ${loading ? "opacity-0" : "opacity-100"}`}
       >
         {(image || video) && (
           <div
@@ -28,7 +28,7 @@ const PreviewSection = ({
             <IoClose className="scale-150 text-slate-600" />
           </div>
         )}
-        {image && <img src={imageRef.current} className="w-full" />}
+        {image && <img src={imageRef.current} className="w-full h-full object-contain" />}
         {video && (
           <video
             src={videoRef.current}
