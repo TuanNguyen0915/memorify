@@ -9,13 +9,13 @@ import PreviewSection from "../MainSection/PreviewSection"
 import { uploadToFireBase } from "../../services/uploadToFirebase"
 import { createPost } from "../../services/post"
 import { useSelector } from "react-redux"
-  
+
 const NavBar = () => {
   const { currentUser } = useSelector((state) => state.user)
   const [loading, setLoading] = useState(false)
   // { setImage, imageRef, setVideo, videoRef }
-  const [typePost, SetTypePost] = useState('')
-  const [image, setImage] = useState(null)          
+  const [typePost, SetTypePost] = useState("")
+  const [image, setImage] = useState(null)
   const imageRef = useRef()
   const [video, setVideo] = useState(null)
   const videoRef = useRef()
@@ -86,7 +86,13 @@ const NavBar = () => {
       )}
       {(typePost || image || video) && (
         <div className="z-10 flex h-[500px] w-full flex-col gap-5 rounded-b-lg bg-white p-4">
-          <p className="text-3xl">{typePost}</p>
+          {/* <p className="text-3xl">{typePost}</p> */}
+          <input
+            onChange={(e) => SetTypePost(e.target.value)}
+            value={typePost}
+            type="text"
+            className="w-full bg-none text-3xl outline-none"
+          />
           <PreviewSection
             image={image}
             setImage={setImage}

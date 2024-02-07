@@ -3,12 +3,14 @@ import { FaHeart } from "react-icons/fa6"
 import { TbMessage2 } from "react-icons/tb"
 import { FiShare } from "react-icons/fi"
 const FeedCard = ({ post }) => {
+  console.log(post)
+
   return (
-    <div className="mb-5 flex w-full flex-col gap-4 rounded-2xl bg-white p-4">
+    <div className="mb-5 flex w-full flex-col gap-4 rounded-2xl rounded-lg bg-white p-4">
       <img
-        src={post.url}
+        src={post.imageUrl}
         alt="post"
-        className="h-[400px] w-full rounded-lg object-cover"
+        className="h-[400px] w-full rounded-lg object-contain"
       />
       <div className="flex items-center gap-5">
         <div className="flexCenter">
@@ -23,7 +25,7 @@ const FeedCard = ({ post }) => {
       </div>
       <p className="text-sm text-slate-400">{post.likes} likes</p>
       <div className="flex gap-5">
-        <p className="font-xl max-w-[10rem] font-semibold">{post.name}</p>
+        <p className="font-xl max-w-[10rem] font-semibold">{post.author.firstName} {post.author.lastName}</p>
         <p>{post.description}</p>
       </div>
     </div>

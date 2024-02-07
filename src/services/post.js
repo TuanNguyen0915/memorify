@@ -15,4 +15,14 @@ const createPost = async (formData) => {
     throw new Error(error.message)
   }
 }
-export { createPost }
+
+const allPosts = async() => {
+  try {
+    const posts = await ((await fetch(`${BASE_URL}/post`))).json()
+    return posts
+  } catch (error) {
+    throw new Error(error.message)
+  }
+}
+
+export { createPost, allPosts }
